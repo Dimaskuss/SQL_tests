@@ -1,8 +1,14 @@
+import javax.persistence.*;
 import java.util.Objects;
 
+@Entity
+@Table(name = "city")
 public class City {
-
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "city_id")
     private int cityId;
+    @Column(name = "city_name")
     private String cityName;
 
     public City() {
@@ -16,7 +22,7 @@ public class City {
 
     public City(int cityId) {
         this.cityId = cityId;
-        this.cityName = cityName;
+
     }
 
     public int getCityId() {
